@@ -35,14 +35,24 @@ function displayTemperature(response) {
     
 }    
 
- 
+function search(city) {
 let apiKey = "95a0279efa62b6e7d0fd1891ab7005da";
-let city = "Kisumu";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-
-
 axios.get(apiUrl).then(displayTemperature);
+}
+ 
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityName = document.querySelector("#search-result");
+    search(cityName.value);
+}
 
+
+
+
+
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 
