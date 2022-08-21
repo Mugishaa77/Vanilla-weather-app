@@ -10,14 +10,13 @@ function formatDate (timestamp) {
      }
      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
      let day = days[date.getDay()];
-     console.log(date);
-     console.log(hours);
+     
     return day + " " + hours + ":" + minutes;
     
 }
 
 function displayTemperature(response) {
-    console.log(response.data);
+
     let tempElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description");
@@ -30,13 +29,12 @@ function displayTemperature(response) {
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
-    console.log(response.data.dt);
-}
+}    
 
 let apiKey = "95a0279efa62b6e7d0fd1891ab7005da";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Nairobi&appid=95a0279efa62b6e7d0fd1891ab7005da&units=metric";
 
-console.log(apiUrl);
+
 
 axios.get(apiUrl).then(displayTemperature);
 
