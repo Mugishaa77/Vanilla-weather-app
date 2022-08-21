@@ -24,6 +24,10 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement=document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
+
+    celciusTemperature = response.data.main.temp;
+
+
     tempElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
@@ -46,13 +50,31 @@ function handleSubmit(event) {
     let cityName = document.querySelector("#search-result");
     search(cityName.value);
 }
+    
 
+function displayImperialTemperature(event) {
+    event.preventDefault();
+    let imperialTemperature = (celciusTemperature * 9/5) + 32 ;
+    let tempElement = document.querySelector("#temperature");
+    tempElement.innerHTML = Math.round(imperialTemperature);
+}
 
+function displayCelciusTemperature(event) {
+    event.preventDefault();
+    let tempElement = document.querySelector("#temperature");
+    tempElement.innerHTML = Math.round(celciusTemperature);
+}
 
+let celciusTemperature = null;
 
+let imperialTemperature = document.querySelector("#fh-link");
+imperialTemperature.addEventListener("click", displayImperialTemperature);
 
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
+search("Nairobi");
 
