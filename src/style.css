@@ -61,3 +61,21 @@ li:first-letter {
     top: -34px;
 }
 
+.weather-forecast {
+    margin-top: 20px;
+    text-align:center;
+
+}
+
+.weather-forecast-date {
+    font-size: 16px;
+    color: "#F7605F";
+}
+
+.weather-forecast-temperature {
+    font-size: 13px;
+}
+
+.high {
+    opacity: 0.5;
+}
