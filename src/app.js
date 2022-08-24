@@ -14,7 +14,38 @@ function formatDate (timestamp) {
     return day + " " + hours + ":" + minutes;
     
 }
+ function displayForecast () {
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
 
+    let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+    days.forEach(function(day){
+        forecastHTML  = forecastHTML + 
+                `<div class="col-2">
+                  <div class="weather-forecast-date">${day}</div>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt=""
+                    width="36"
+                  />
+                  <div class="weather-forecast-temperature">
+                    <span class="high">20</span>/<span class="low">15</span>
+                  </div>
+                </div>
+                 </div>
+            </div>`;
+
+
+    })
+
+    
+    
+            forecastHTML = forecastHTML + `</div>`;
+            forecastElement.innerHTML = forecastHTML;
+
+
+                
+ }
 function displayTemperature(response) {
 
     let tempElement = document.querySelector("#temperature");
@@ -66,6 +97,9 @@ function displayCelciusTemperature(event) {
 }
 
 let celciusTemperature = null;
+
+
+ displayForecast();
 
 let imperialTemperature = document.querySelector("#fh-link");
 imperialTemperature.addEventListener("click", displayImperialTemperature);
