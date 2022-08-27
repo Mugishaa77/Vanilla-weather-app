@@ -107,14 +107,6 @@ function handleSubmit(event) {
     search(cityName.value);
 }
     
-
-function displayImperialTemperature(event) {
-    event.preventDefault();
-    let imperialTemperature = (celciusTemperature * 9/5) + 32 ;
-    let tempElement = document.querySelector("#temperature");
-    tempElement.innerHTML = Math.round(imperialTemperature);
-}
-
 function displayCelciusTemperature(event) {
     event.preventDefault();
     let tempElement = document.querySelector("#temperature");
@@ -122,15 +114,6 @@ function displayCelciusTemperature(event) {
 }
 
 let celciusTemperature = null;
-
-
-
-
-let imperialTemperature = document.querySelector("#fh-link");
-imperialTemperature.addEventListener("click", displayImperialTemperature);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelciusTemperature);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
