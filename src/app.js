@@ -33,7 +33,7 @@ function formatDate (timestamp) {
     forecast.forEach(function (forecastDay, index) {
       if (index < 6) {
         forecastHTML  = forecastHTML + 
-                `<div class="col-2">
+                `<div class="col">
                   <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
                   <img
                     src= "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
@@ -41,8 +41,8 @@ function formatDate (timestamp) {
                     width="36"
                   />
                   <div class="weather-forecast-temperature">
-                    <span class="high">${Math.round(forecastDay.temp.max)}</span>/
-                    <span class="low">${Math.round(forecastDay.temp.min)}</span>
+                    <span class="high"> High: ${Math.round(forecastDay.temp.max)}°C</span>
+                    <span class="low"> Low: ${Math.round(forecastDay.temp.min)}°C</span>
                   </div>
                 </div>
                  </div>

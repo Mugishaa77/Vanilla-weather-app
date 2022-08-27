@@ -1,6 +1,9 @@
 body { 
-    font-family:Arial, Helvetica, sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #89CFFD;
+    
 }
+
 
 h1 {
     color: #111010;
@@ -78,4 +81,9 @@ li:first-letter {
 
 .high {
     opacity: 0.5;
+}
+
+.git-repo {
+    color: #AF3559;
+
 }
