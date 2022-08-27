@@ -41,7 +41,7 @@ function formatDate (timestamp) {
                     width="36"
                   />
                   <div class="weather-forecast-temperature">
-                    <span class="high"> High: ${Math.round(forecastDay.temp.max)}°C</span>
+                    <span class="high"> High: ${Math.round(forecastDay.temp.max)}°C</span> ||
                     <span class="low"> Low: ${Math.round(forecastDay.temp.min)}°C</span>
                   </div>
                 </div>
